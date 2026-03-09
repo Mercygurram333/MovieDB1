@@ -1,0 +1,1074 @@
+/* ============================================================
+   MOVIEDB — GLOBAL STYLESHEET
+   Dark cinematic theme with gold accent (#f5c518)
+   ============================================================ */
+
+/* ===== RESET & BASE ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  min-height: 100vh;
+  background-color: #0a0a0f;
+  color: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== LAYOUT ===== */
+.page-wrapper {
+  min-height: 100vh;
+  background-color: #0a0a0f;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 36px 28px;
+}
+
+/* ============================================================
+   HEADER / NAVBAR
+   ============================================================ */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  height: 70px;
+  background: rgba(10, 10, 15, 0.97);
+  border-bottom: 1px solid #1e1e2e;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Brand / Logo */
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none !important;
+  color: #ffffff !important;
+  font-size: 1.55rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1;
+}
+
+.header-brand:hover {
+  color: #ffffff !important;
+}
+
+.header-brand .brand-icon {
+  font-size: 1.6rem;
+}
+
+.header-brand .brand-name {
+  color: #ffffff;
+}
+
+.header-brand .brand-accent {
+  color: #f5c518;
+}
+
+/* Nav links */
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 8px;
+  color: #a0a0b8 !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none !important;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff !important;
+  background: #1a1a28;
+  text-decoration: none !important;
+}
+
+.btn-logout {
+  padding: 8px 20px;
+  background: transparent;
+  color: #e50914;
+  border: 1.5px solid #e50914;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+}
+
+.btn-logout:hover {
+  background: #e50914;
+  color: #ffffff;
+  box-shadow: 0 0 18px rgba(229, 9, 20, 0.4);
+}
+
+/* ============================================================
+   LOGIN PAGE
+   ============================================================ */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0a0a0f;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-page::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: -15%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(245, 197, 24, 0.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.login-page::after {
+  content: '';
+  position: absolute;
+  bottom: -25%;
+  right: -10%;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(229, 9, 20, 0.06) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.login-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 430px;
+  padding: 52px 44px;
+  background: #14141f;
+  border: 1px solid #2a2a3a;
+  border-radius: 20px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.7);
+}
+
+.login-logo {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.login-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.login-brand-icon {
+  font-size: 2rem;
+}
+
+.login-brand-text {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1;
+}
+
+.login-hint {
+  text-align: center;
+  font-size: 0.78rem;
+  color: #404055;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid #1e1e2e;
+}
+
+.login-hint strong {
+  color: #606078;
+  font-weight: 600;
+}
+
+.login-title {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+
+.login-subtitle {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #606078;
+  margin-bottom: 36px;
+}
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #a0a0b8;
+  margin-bottom: 9px;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.form-input {
+  width: 100%;
+  padding: 14px 16px;
+  background: #0a0a0f;
+  border: 1.5px solid #2a2a3a;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+}
+
+.form-input::placeholder {
+  color: #404055;
+}
+
+.form-input:focus {
+  border-color: #f5c518;
+  box-shadow: 0 0 0 3px rgba(245, 197, 24, 0.13);
+  background: #12121c;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  background: #f5c518;
+  color: #0a0a0f;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #e6b800;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(245, 197, 24, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* ============================================================
+   HOME PAGE
+   ============================================================ */
+.home-hero {
+  padding: 44px 0 28px;
+  border-bottom: 1px solid #1e1e2e;
+  margin-bottom: 40px;
+}
+
+.home-hero h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.home-hero p {
+  color: #606078;
+  font-size: 1rem;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  max-width: 660px;
+  margin: 0 auto 44px;
+  background: #14141f;
+  border: 1.5px solid #2a2a3a;
+  border-radius: 14px;
+  padding: 7px 7px 7px 20px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-bar:focus-within {
+  border-color: #f5c518;
+  box-shadow: 0 0 0 3px rgba(245, 197, 24, 0.12);
+}
+
+.search-bar input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 0.975rem;
+  padding: 7px 4px;
+  font-family: inherit;
+}
+
+.search-bar input::placeholder {
+  color: #404055;
+}
+
+.search-bar .clear-btn {
+  background: transparent;
+  border: none;
+  color: #606078;
+  font-size: 1rem;
+  padding: 8px 10px;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.search-bar .clear-btn:hover {
+  color: #a0a0b8;
+}
+
+.search-bar .search-btn {
+  padding: 11px 26px;
+  background: #f5c518;
+  color: #0a0a0f;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease, transform 0.15s ease;
+  font-family: inherit;
+}
+
+.search-bar .search-btn:hover {
+  background: #e6b800;
+  transform: scale(1.03);
+}
+
+/* Section heading */
+.section-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #1e1e2e;
+}
+
+/* ============================================================
+   MOVIE GRID & CARDS
+   ============================================================ */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+  gap: 22px;
+}
+
+.movie-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #14141f;
+  border: 1px solid #1e1e2e;
+  cursor: pointer;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  border-color: #f5c518;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.65), 0 0 22px rgba(245, 197, 24, 0.14);
+}
+
+.movie-card-img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  display: block;
+  transition: filter 0.25s ease;
+}
+
+.movie-card:hover .movie-card-img {
+  filter: brightness(0.65);
+}
+
+.movie-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10, 10, 15, 0.97) 0%,
+    rgba(10, 10, 15, 0.25) 45%,
+    transparent 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 14px 13px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.movie-card:hover .movie-card-overlay {
+  opacity: 1;
+}
+
+.movie-card-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.35;
+  margin-bottom: 5px;
+}
+
+.movie-card-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  color: #f5c518;
+  font-weight: 700;
+}
+
+/* ============================================================
+   STATUS / FEEDBACK
+   ============================================================ */
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 55vh;
+  gap: 18px;
+  color: #606078;
+}
+
+.loading-screen p {
+  font-size: 0.95rem;
+}
+
+.spinner {
+  width: 42px;
+  height: 42px;
+  border: 3px solid #1e1e2e;
+  border-top-color: #f5c518;
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.status-message {
+  text-align: center;
+  padding: 70px 20px;
+  color: #606078;
+}
+
+.status-message .status-icon {
+  font-size: 3.2rem;
+  margin-bottom: 16px;
+}
+
+.status-message p {
+  font-size: 1rem;
+}
+
+.error-text {
+  color: #e50914;
+  background: rgba(229, 9, 20, 0.09);
+  border: 1px solid rgba(229, 9, 20, 0.25);
+  border-radius: 8px;
+  padding: 13px 18px;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ============================================================
+   MOVIE DETAILS PAGE
+   ============================================================ */
+.movie-details-page {
+  min-height: 100vh;
+  background-color: #0a0a0f;
+}
+
+.movie-backdrop {
+  position: relative;
+  width: 100%;
+  height: 440px;
+  overflow: hidden;
+}
+
+.movie-backdrop-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.3);
+}
+
+.movie-backdrop-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 15, 0.2) 0%,
+    rgba(10, 10, 15, 0.65) 55%,
+    rgba(10, 10, 15, 1) 100%
+  );
+}
+
+.movie-details-content {
+  max-width: 1120px;
+  margin: -130px auto 0;
+  padding: 0 36px 70px;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  background: #14141f;
+  border: 1px solid #2a2a3a;
+  border-radius: 8px;
+  color: #a0a0b8;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 34px;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  font-family: inherit;
+}
+
+.btn-back:hover {
+  background: #1e1e2e;
+  color: #ffffff;
+  border-color: #3a3a55;
+}
+
+.movie-details-layout {
+  display: flex;
+  gap: 44px;
+  align-items: flex-start;
+}
+
+.movie-details-poster {
+  flex-shrink: 0;
+  width: 270px;
+  border-radius: 14px;
+  border: 2px solid #2a2a3a;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+}
+
+.movie-details-poster img {
+  width: 100%;
+  display: block;
+}
+
+.movie-details-info {
+  flex: 1;
+  padding-top: 12px;
+}
+
+.movie-details-genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.genre-tag {
+  padding: 5px 14px;
+  background: rgba(245, 197, 24, 0.1);
+  border: 1px solid rgba(245, 197, 24, 0.28);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #f5c518;
+  letter-spacing: 0.3px;
+}
+
+.movie-details-title {
+  font-size: 2.9rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.12;
+  margin-bottom: 12px;
+  letter-spacing: -1px;
+}
+
+.movie-details-tagline {
+  font-size: 1rem;
+  color: #606078;
+  font-style: italic;
+  margin-bottom: 26px;
+}
+
+/* Rating badge */
+.meta-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  background: rgba(245, 197, 24, 0.09);
+  border: 1px solid rgba(245, 197, 24, 0.22);
+  border-radius: 10px;
+  margin-bottom: 28px;
+}
+
+.meta-rating .star {
+  font-size: 1.15rem;
+}
+
+.meta-rating .score {
+  font-size: 1.65rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.meta-rating .score-max {
+  font-size: 0.9rem;
+  color: #606078;
+}
+
+.meta-rating .vote-count {
+  font-size: 0.8rem;
+  color: #606078;
+  margin-left: 4px;
+}
+
+/* Metadata row */
+.movie-details-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin-bottom: 32px;
+  padding: 20px 24px;
+  background: #14141f;
+  border: 1px solid #1e1e2e;
+  border-radius: 12px;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.meta-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #606078;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+}
+
+.meta-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Overview */
+.overview-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #606078;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  margin-bottom: 12px;
+}
+
+.overview-text {
+  font-size: 1rem;
+  color: #a0a0b8;
+  line-height: 1.85;
+  max-width: 700px;
+}
+
+/* ============================================================
+   WISHLIST BUTTON ON MOVIE CARD
+   ============================================================ */
+.wishlist-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  background: rgba(10, 10, 15, 0.75);
+  color: #a0a0b8;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+    transform 0.15s ease, box-shadow 0.2s ease;
+  opacity: 0;
+}
+
+.movie-card:hover .wishlist-btn,
+.wishlist-btn.wishlisted {
+  opacity: 1;
+}
+
+.wishlist-btn:hover {
+  background: rgba(229, 9, 20, 0.85);
+  border-color: #e50914;
+  color: #ffffff;
+  transform: scale(1.15);
+}
+
+.wishlist-btn.wishlisted {
+  background: rgba(229, 9, 20, 0.9);
+  border-color: #e50914;
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(229, 9, 20, 0.5);
+}
+
+.wishlist-btn.wishlisted:hover {
+  background: rgba(180, 0, 10, 0.9);
+  transform: scale(1.15);
+}
+
+/* ============================================================
+   HEADER WISHLIST NAV
+   ============================================================ */
+.wishlist-nav {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.wishlist-icon {
+  font-size: 0.95rem;
+  color: #e50914;
+  line-height: 1;
+}
+
+.nav-link-active {
+  color: #ffffff !important;
+  background: #1a1a28;
+}
+
+.wishlist-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  background: #e50914;
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  border-radius: 999px;
+  line-height: 1;
+}
+
+/* ============================================================
+   WISHLIST PAGE
+   ============================================================ */
+.wishlist-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  text-align: center;
+  gap: 16px;
+}
+
+.wishlist-empty-icon {
+  font-size: 4rem;
+  color: #2a2a3a;
+  line-height: 1;
+}
+
+.wishlist-empty h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #a0a0b8;
+}
+
+.wishlist-empty p {
+  font-size: 0.9rem;
+  color: #606078;
+  max-width: 320px;
+}
+
+.wishlist-browse-btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 12px 32px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  text-decoration: none !important;
+}
+
+.wishlist-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.wishlist-card {
+  display: flex;
+  gap: 20px;
+  background: #14141f;
+  border: 1px solid #1e1e2e;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.wishlist-card:hover {
+  border-color: #2a2a3a;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+}
+
+.wishlist-card-link {
+  flex-shrink: 0;
+  display: block;
+  width: 100px;
+}
+
+.wishlist-card-img {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.2s ease;
+}
+
+.wishlist-card-link:hover .wishlist-card-img {
+  opacity: 0.85;
+}
+
+.wishlist-card-info {
+  flex: 1;
+  padding: 18px 18px 18px 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.wishlist-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none !important;
+  line-height: 1.3;
+  transition: color 0.2s ease;
+}
+
+.wishlist-card-title:hover {
+  color: #f5c518 !important;
+}
+
+.wishlist-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.wishlist-card-rating {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #f5c518;
+}
+
+.wishlist-card-year {
+  font-size: 0.8rem;
+  color: #606078;
+  font-weight: 500;
+}
+
+.wishlist-card-overview {
+  font-size: 0.82rem;
+  color: #606078;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.wishlist-remove-btn {
+  align-self: flex-start;
+  padding: 7px 16px;
+  background: transparent;
+  color: #e50914;
+  border: 1.5px solid rgba(229, 9, 20, 0.35);
+  border-radius: 7px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+  margin-top: auto;
+}
+
+.wishlist-remove-btn:hover {
+  background: rgba(229, 9, 20, 0.12);
+  border-color: #e50914;
+  box-shadow: 0 0 10px rgba(229, 9, 20, 0.2);
+}
+
+@media (max-width: 480px) {
+  .wishlist-card-link {
+    width: 80px;
+  }
+
+  .wishlist-card-img {
+    width: 80px;
+    height: 120px;
+  }
+
+  .wishlist-card-overview {
+    display: none;
+  }
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.4s ease both;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .movie-details-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .movie-details-poster {
+    width: 210px;
+  }
+
+  .movie-details-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .movie-details-genres {
+    justify-content: center;
+  }
+
+  .meta-rating {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .movie-details-content {
+    margin-top: -60px;
+    padding: 0 18px 40px;
+  }
+
+  .movie-backdrop {
+    height: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 0 18px;
+    height: 62px;
+  }
+
+  .header-brand {
+    font-size: 1.2rem;
+  }
+
+  .container {
+    padding: 20px 16px;
+  }
+
+  .home-hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+    gap: 14px;
+  }
+
+  .login-card {
+    margin: 16px;
+    padding: 36px 24px;
+  }
+
+  .movie-details-meta {
+    gap: 18px;
+    padding: 16px;
+  }
+}
